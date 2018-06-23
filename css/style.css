@@ -75,7 +75,10 @@ text-decoration: underline;
 font-family: 'Dancing Script', cursive;
 }
 .homeCenter{
-	width: 70;
+	width: 70%;
 	margin: auto;
 	border: gray 1px solid;
+}
+.fb-page{
+	margin: auto;
 }
