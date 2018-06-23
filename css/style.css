@@ -74,13 +74,114 @@ text-decoration: underline;
 .name{
 font-family: 'Dancing Script', cursive;
 }
-.homeCenter{
-	width: 60%;
-	height: 1000px;
-	margin: auto;
-	border: #C7C7C7 1px solid;
+.hidden{
+display: none;
 }
-.fb-page{
-	margin: auto;
-	float: left;
+.parallax {/*Parallax code by w3schools*/
+
+    /* Set a specific height */
+
+width: 95%;
+min-height:500px;
+margin: auto;
+
+    /* Create the parallax scrolling effect */
+  position: relative;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.divider{
+color: #777;
+background-color:white;
+text-align:center;
+padding:50px 80px;
+text-align: center;
+}
+.caption{
+position: absolute;
+  top: 50%;
+right: 0;
+padding: 20px;
+  text-align: center;
+  color: #fff;
+background-color: #000;
+font-family: 'Satisfy', cursive;
+}
+#bottomlink{
+text-decoration: none;
+color: black;
+}
+#bottomlink:hover{
+text-decoration: underline;
+}
+#locationsmapdiv{
+text-align: center;
+}
+#locationsheader{
+text-align: center;
+}
+
+.downArrow{/*bouncing arrow code found online*/
+	position: fixed;
+	bottom: 25%;
+	left: 50%;
+}
+.bounce {
+	-moz-animation: bounce 3s infinite;
+	-webkit-animation: bounce 3s infinite;
+	animation: bounce 3s infinite;
+}
+#arrow{
+cursor:s-resize;
+}
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
 }

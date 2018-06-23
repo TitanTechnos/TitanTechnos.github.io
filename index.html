@@ -5,14 +5,6 @@
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
-	<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 <nav id="navbar" class="sticky">
 <ul id="navlist">
 <li><a href="#" id="navActive">Home</a></li>
@@ -21,13 +13,120 @@
 <li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
-<div class="homeCenter">
-	
+<div style="background-image: url('../assets/lobsterhouse.jpg');height:100%;width:100%;" class="parallax"></div><br><br>
+
+<div id="arrow" class="downArrow bounce" onclick="smooth_scroll_to(document.body, 880, 1000);">
+<img width="50" height="50" alt="" src="../assets/downarrow.png" />
 </div>
-	<div class="fb-page" data-href="https://www.facebook.com/titantechnos" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/titantechnos" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/titantechnos">Titan Technos</a></blockquote></div>
+
+
+<div style="background-image: url('../assets/rOne.jpg');" class="parallax"><h1 class="caption">Good Food</h1></div>
+<div class="divider">
+<h1>We maintain a high standard of service and food, just for you.</h1>
+</div>
+<div style="background-image: url('../assets/lobster.jpg');" class="parallax"><h1 class="caption">Fresh Caught</h1></div>
+<div class="divider">
+<h1>Our food is always caught fresh; we never freeze our meat.</h1>
+</div>
+<div style="background-image: url('../assets/rTwo.jpg');" class="parallax"><h1 class="caption">Great Prices</h1></div>
+<div class="divider">
+<h1>Don't break the bank by eating at Lobster House!</h1>
+</div>
 <footer>
 <h2 class="name">Titan Technos</h2>
 <p id="footerlinks"><a href="#">Home</a> | <a href="about.html">About Us</a> | <a href="meet.html">Meet the Team</a> |  <a href="contact.html">Contact</a></p>
 </footer>
+<script>
+window.onscroll = function() {stickyFunction()};
+let arrow = document.getElementById("arrow");
+let offset = arrow.offsetTop;
+function stickyFunction(){
+  if (((window.pageYOffset)+370) >= offset) {
+    arrow.classList.add("hidden");
+  } else {
+    arrow.classList.remove("hidden");
+  }
+}
+
+//Smooth scroll found online
+
+/**
+    Smoothly scroll element to the given target (element.scrollTop)
+    for the given duration
+
+    Returns a promise that's fulfilled when done, or rejected if
+    interrupted
+ */
+var smooth_scroll_to = function(element, target, duration) {
+    target = Math.round(target);
+    duration = Math.round(duration);
+    if (duration < 0) {
+        return Promise.reject("bad duration");
+    }
+    if (duration === 0) {
+        element.scrollTop = target;
+        return Promise.resolve();
+    }
+
+    var start_time = Date.now();
+    var end_time = start_time + duration;
+
+    var start_top = element.scrollTop;
+    var distance = target - start_top;
+
+    // based on http://en.wikipedia.org/wiki/Smoothstep
+    var smooth_step = function(start, end, point) {
+        if(point <= start) { return 0; }
+        if(point >= end) { return 1; }
+        var x = (point - start) / (end - start); // interpolation
+        return x*x*(3 - 2*x);
+    }
+
+    return new Promise(function(resolve, reject) {
+        // This is to keep track of where the element's scrollTop is
+        // supposed to be, based on what we're doing
+        var previous_top = element.scrollTop;
+
+        // This is like a think function from a game loop
+        var scroll_frame = function() {
+            if(element.scrollTop != previous_top) {
+                reject("interrupted");
+                return;
+            }
+
+            // set the scrollTop for this frame
+            var now = Date.now();
+            var point = smooth_step(start_time, end_time, now);
+            var frameTop = Math.round(start_top + (distance * point));
+            element.scrollTop = frameTop;
+
+            // check if we're done!
+            if(now >= end_time) {
+                resolve();
+                return;
+            }
+
+            // If we were supposed to scroll but didn't, then we
+            // probably hit the limit, so consider it done; not
+            // interrupted.
+            if(element.scrollTop === previous_top
+                && element.scrollTop !== frameTop) {
+                resolve();
+                return;
+            }
+            previous_top = element.scrollTop;
+
+            // schedule next frame for execution
+            setTimeout(scroll_frame, 0);
+        }
+
+        // boostrap the animation process
+        setTimeout(scroll_frame, 0);
+    });
+}
+
+
+
+</script>
 </body>
 </html>
