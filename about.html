@@ -4,6 +4,50 @@
   <title>Titan Technos | About Us</title>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon.png">
+  <style>
+  #aboutColumns{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  }
+  .aboutColumn{
+  display: inline-block;
+  width: 30%;
+  height: 400px;
+  margin: auto;
+  }
+  .aboutImage{
+  border-radius: 20px;
+  width: 250px;
+  height: 250px;
+  }
+  #aboutHeader{
+    width: 80%;
+    margin:auto;
+  text-align: center;
+  font-family: 'Lobster';
+  }
+  .columnHeader{
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Lobster';
+  }
+  .columnDescription{
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  hyphens: auto;
+  }
+  .mailtolink{
+  text-decoration: none;
+  color: red;
+  transition: color .15s;
+  hyphens: none;
+  }
+  .mailtolink:hover{
+  color: darkred;
+  }
+</style>
 </head>
 <body>
 <nav id="navbar" class="sticky">
@@ -17,132 +61,57 @@
 
 <div style="background-image: url('assets/about.jpg');height:100%;width:100%;" class="parallax"></div><br><br>
 
-<div id="arrow" class="downArrow bounce" onclick="smooth_scroll_to(document.body, 880, 1000);">
-<img width="50" height="50" alt="" src="assets/downarrow.png" />
-</div>
 
-<h6>A long time ago in a small town far far away a few nerds got together to build a robot. The Titan Technos are a diverse group of 9th-12th graders with varying talents to meet the multi-faceted demands of the FIRST Tech Challenges.</h6>
+
+
+<h1 id="aboutHeader">A long time ago in a small town far away a few nerds got together to build a robot. The Titan Technos are a diverse group of 9th-12th graders with varying talents to meet the multi-faceted demands of the FIRST Tech Challenges.</h1>
+<br><br>
+<ul id="aboutColumns">
+<div class="aboutColumn">
+<img src="assets/aboutRobot.jpg" class="aboutImage">
+<h3 class="columnHeader">More Than a Robot</h3>
+<p class="columnDescription">FIRST was never just about a robot or some competition. It is about the community, STEM, and learning. The sutudents on FTC teams learn about design, programming, and building, but they also learn the importance of teamwork, communication, and community. Through FIRST, students are a part of more than a team. They are a part of a family.</p>
+
+</div>
+<div class="aboutColumn">
+<img src="assets/aboutTitan.jpg" class="aboutImage">
+<h3 class="columnHeader">The Titan Technos</h3>
+<p class="columnDescription">We here on the Titan Technos team have learned so much since our first year in 2016 (Velocity Vortex). After the increase in popularity of the robotics program of our school in the 2017/18 school year, we split into two teams: 12035 and 13957. This combined with the challenge of getting sponsors taught us about persevering through the challenges of FIRST.</p>
+
+
+</div>
+<div class="aboutColumn">
+<img src="assets/about.jpg" class="aboutImage">
+<h3 class="columnHeader">Our Community</h3>
+<p class="columnDescription">One of the advantages of being based in a small, close-nit community is just that; everyone knows everyone and it makes it 10x for fulfilling to outreach. We have, among other thing, helped support our local elemntary school's Lego League program, demonstrated our program at our homecoming parade, and expose FIRST to kids at the local libray's STEM events.</p>
+
+
+</div>
+</ul>
+<br>
 
 <hr>
-
-<p>We are a small team in a great, tight-nit community. We all play a role on our team, our school, and our community.
-We were a rookie team in the 2016/2017 school year; the Velocity Vortex challenge. That year we were incredibly surprised to make it to the
-state competition. The following year, we split into two different teams to compensate for the boost in popularity of the robotics program
-at our school; teams <a href="https://theorangealliance.org/teams/12035">12035</a> and <a href="https://theorangealliance.org/teams/13957">13957</a>.</p>
-
-<p>We quickly learned that <span style="font-style:italic;">FIRST</span> wasn't all about making cool robots. It is about the community, the learing experiences, and showing the potential of STEM jobs and activities to kids of all ages. We have done
-all sorts of community outreach - supporting the Lego Leauge at our feeder elementary school, participating in our homecoming parade, and helping out at the local libraries' STEM days are just a few.</p>
-
-
+<br>
 <div id="searchbox"><input id="pac-input" class="controls" type="text" name="search" placeholder="Enter a State, City, or Zip Code"></div><br>
 <div id="map"></div>
-
+<br><br>
 
 <footer>
 <h2 class="name">Titan Technos</h2>
 <p id="footerlinks"><a href="index.html">Home</a> | <a href="#">About Us</a> | <a href="meet.html">Meet the Team</a> |  <a href="contact.html">Contact</a></p>
 </footer>
+
 <script>
-window.onscroll = function() {stickyFunction()};
-let arrow = document.getElementById("arrow");
-let offset = arrow.offsetTop;
-function stickyFunction(){
-  if (((window.pageYOffset)+370) >= offset) {
-    arrow.classList.add("hidden");
-  } else {
-    arrow.classList.remove("hidden");
-  }
-}
-
-//Smooth scroll found online
-
-/**
-    Smoothly scroll element to the given target (element.scrollTop)
-    for the given duration
-
-    Returns a promise that's fulfilled when done, or rejected if
-    interrupted
- */
-var smooth_scroll_to = function(element, target, duration) {
-    target = Math.round(target);
-    duration = Math.round(duration);
-    if (duration < 0) {
-        return Promise.reject("bad duration");
-    }
-    if (duration === 0) {
-        element.scrollTop = target;
-        return Promise.resolve();
-    }
-
-    var start_time = Date.now();
-    var end_time = start_time + duration;
-
-    var start_top = element.scrollTop;
-    var distance = target - start_top;
-
-    // based on http://en.wikipedia.org/wiki/Smoothstep
-    var smooth_step = function(start, end, point) {
-        if(point <= start) { return 0; }
-        if(point >= end) { return 1; }
-        var x = (point - start) / (end - start); // interpolation
-        return x*x*(3 - 2*x);
-    }
-
-    return new Promise(function(resolve, reject) {
-        // This is to keep track of where the element's scrollTop is
-        // supposed to be, based on what we're doing
-        var previous_top = element.scrollTop;
-
-        // This is like a think function from a game loop
-        var scroll_frame = function() {
-            if(element.scrollTop != previous_top) {
-                reject("interrupted");
-                return;
-            }
-
-            // set the scrollTop for this frame
-            var now = Date.now();
-            var point = smooth_step(start_time, end_time, now);
-            var frameTop = Math.round(start_top + (distance * point));
-            element.scrollTop = frameTop;
-
-            // check if we're done!
-            if(now >= end_time) {
-                resolve();
-                return;
-            }
-
-            // If we were supposed to scroll but didn't, then we
-            // probably hit the limit, so consider it done; not
-            // interrupted.
-            if(element.scrollTop === previous_top
-                && element.scrollTop !== frameTop) {
-                resolve();
-                return;
-            }
-            previous_top = element.scrollTop;
-
-            // schedule next frame for execution
-            setTimeout(scroll_frame, 0);
-        }
-
-        // boostrap the animation process
-        setTimeout(scroll_frame, 0);
-    });
-}
 
 
+function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 39.5504804, lng: -107.6095095},
+          zoom: 17,
+          mapTypeId: 'roadmap'
+        });
 
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: 39.5502818, lng: -107.6113978};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 17, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
-}
-// Create the search box and link it to the UI element.
+        // Create the search box and link it to the UI element.
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -161,9 +130,50 @@ function initMap() {
           if (places.length == 0) {
             return;
           }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7wPAa_bkuUvNlCF3yiNwzRx3A1XLoFuE&callback=initMap">
-    </script>
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG1ZS_4p37F7SrHReI9vmGqrw81JWcINQ&libraries=places&callback=initAutocomplete"
+         async defer></script>
 </body>
 </html>
