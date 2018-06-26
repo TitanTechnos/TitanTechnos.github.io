@@ -21,13 +21,21 @@
 <img width="50" height="50" alt="" src="assets/downarrow.png" />
 </div>
 
+<h6>A long time ago in a small town far far away a few nerds got together to build a robot. The Titan Technos are a diverse group of 9th-12th graders with varying talents to meet the multi-faceted demands of the FIRST Tech Challenges.</h6>
+
+<hr>
+
+<p>We are a small team in a great, tight-nit community. We all play a role on our team, our school, and our community.
+We were a rookie team in the 2016/2017 school year; the Velocity Vortex challenge. That year we were incredibly surprised to make it to the
+state competition. The following year, we split into two different teams to compensate for the boost in popularity of the robotics program
+at our school; teams <a href="https://theorangealliance.org/teams/12035">12035</a> and <a href="https://theorangealliance.org/teams/13957">13957</a>.</p>
+
+<p>We quickly learned that <span style="font-style:italic;">FIRST</span> wasn't all about making cool robots. It is about the community, the learing experiences, and showing the potential of STEM jobs and activities to kids of all ages. We have done
+all sorts of community outreach - supporting the Lego Leauge at our feeder elementary school, participating in our homecoming parade, and helping out at the local libraries' STEM days are just a few.</p>
 
 
-
-
-
-
-
+<div id="searchbox"><input id="pac-input" class="controls" type="text" name="search" placeholder="Enter a State, City, or Zip Code"></div><br>
+<div id="map"></div>
 
 
 <footer>
@@ -125,6 +133,37 @@ var smooth_scroll_to = function(element, target, duration) {
 
 
 
-</script>
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: 39.5502818, lng: -107.6113978};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 17, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+// Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7wPAa_bkuUvNlCF3yiNwzRx3A1XLoFuE&callback=initMap">
+    </script>
 </body>
 </html>
