@@ -28,6 +28,48 @@ float: left;
 width: 65px;
 }
 
+#firstContent{
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  border-radius: 20px;
+}
+
+#firstImage{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    margin-top: 5em;
+}
+
+#firstHeader{
+  font-size:2em;
+  font-family: 'Righteous', cursive;
+  width: 50%;
+  margin: auto;
+}
+
+#firstPrograms{
+  width:100%;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#deanQuote{
+  width:90%;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contactHeader{
+  width: 30%;
+  margin: auto;
+  font-family: 'Comfortaa', cursive;
+}
+
 nav li a{
 display: block;
 color: white;

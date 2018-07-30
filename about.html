@@ -4,7 +4,16 @@
   <title>Titan Technos | About Us</title>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya|Comfortaa|Righteous|Satisfy" rel="stylesheet">
   <style>
+  body{
+    background-image:
+        linear-gradient( rgba(255,255,255,.7), rgba(255,255,255,.7) ),
+        url('assets/gears.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
   #aboutColumns{
   width: 100%;
   margin: auto;
@@ -12,9 +21,11 @@
   }
   .aboutColumn{
   display: inline-block;
-  width: 30%;
+  width: 25%;
   height: 400px;
   margin: auto;
+  margin-left: 3em;
+  margin-right:3em;
   }
   .aboutImage{
   border-radius: 20px;
@@ -25,18 +36,21 @@
     width: 80%;
     margin:auto;
   text-align: center;
-  font-family: 'Lobster';
+  font-family: 'Comfortaa', cursive;
+  border-radius: 15px;
+  background-image: linear-gradient( rgba(255,255,255,.5), rgba(255,255,255,.5) );
   }
   .columnHeader{
   text-align: center;
   font-size: 1.5em;
-  font-family: 'Lobster';
+  font-family: 'Comfortaa', cursive;
   }
   .columnDescription{
   text-align: center;
-  width: 60%;
+  width: 80%;
   margin: auto;
   hyphens: auto;
+  font-family: 'Comfortaa', cursive;
   }
   .mailtolink{
   text-decoration: none;
@@ -46,6 +60,21 @@
   }
   .mailtolink:hover{
   color: darkred;
+  }
+  .columnText{
+    border-radius: 15px;
+    background-image: linear-gradient( rgba(255,255,255,.5), rgba(255,255,255,.5) );
+  }
+  #mainAbout{
+    width: 15%;
+    margin:auto;
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    margin-top: 3em;
+    margin-bottom: 2em;
+    border-radius: 15px;
+    background-image: linear-gradient( rgba(255,255,255,.5), rgba(255,255,255,.5) );
+
   }
 </style>
 </head>
@@ -62,32 +91,34 @@
 </ul>
 </nav>
 
-<div style="background-image: url('assets/about.jpg');height:100%;width:100%;" class="parallax"></div><br><br>
 
 
+<h1 id="mainAbout">About Us</h1>
 
-
-<h1 id="aboutHeader">A long time ago in a small town far away a few nerds got together to build a robot. The Titan Technos are a diverse group of 9th-12th graders with varying talents to meet the multi-faceted demands of the FIRST Tech Challenges.</h1>
+<h2 id="aboutHeader">A long time ago in a small town far away a few nerds got together to build a robot. The Titan Technos are a diverse group of 9th-12th graders with varying talents to meet the multi-faceted demands of the FIRST Tech Challenges.</h2>
 <br><br>
 <ul id="aboutColumns">
 <div class="aboutColumn">
 <img src="assets/aboutRobot.jpg" class="aboutImage">
+<div class="columnText">
 <h3 class="columnHeader">More Than a Robot</h3>
 <p class="columnDescription">FIRST was never just about a robot or some competition. It is about the community, STEM, and learning. The sutudents on FTC teams learn about design, programming, and building, but they also learn the importance of teamwork, communication, and community. Through FIRST, students are a part of more than a team. They are a part of a family.</p>
-
+</div>
 </div>
 <div class="aboutColumn">
 <img src="assets/aboutTitan.jpg" class="aboutImage">
+<div class="columnText">
 <h3 class="columnHeader">The Titan Technos</h3>
 <p class="columnDescription">We here on the Titan Technos team have learned so much since our first year in 2016 (Velocity Vortex). After the increase in popularity of the robotics program of our school in the 2017/18 school year, we split into two teams: 12035 and 13957. This combined with the challenge of getting sponsors taught us about persevering through the challenges of FIRST.</p>
-
+</div>
 
 </div>
 <div class="aboutColumn">
 <img src="assets/about.jpg" class="aboutImage">
+<div class="columnText">
 <h3 class="columnHeader">Our Community</h3>
 <p class="columnDescription">One of the advantages of being based in a small, close-nit community is just that; everyone knows everyone and it makes it 10x for fulfilling to outreach. We have, among other thing, helped support our local elemntary school's Lego League program, demonstrated our program at our homecoming parade, and expose FIRST to kids at the local libray's STEM events.</p>
-
+</div>
 
 </div>
 </ul>
