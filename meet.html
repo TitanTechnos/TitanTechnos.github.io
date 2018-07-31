@@ -5,7 +5,68 @@
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Alegreya|Comfortaa|Righteous|Satisfy" rel="stylesheet">
+<style>
+body{
+  background: darkgray;
+}
+html {
+  box-sizing: border-box;
+}
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 16.6%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: lightgray;
+}
+
+.container {
+  padding: 0 16px;
+
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+</style>
 </head>
 <body>
 <nav id="navbar" class="sticky">
@@ -19,11 +80,215 @@
 <li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
+<br><br><br><br>
+<img src="assets/meet_the_team_header.png" id="meetHeader">
+<br><br>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="Camilla" style="width:100%">
+      <div class="container">
+        <h2>Camilla Bates</h2>
+        <p class="title">Mentor</p>
+        <p>Profe Bates, a Spanish teacher, is one reason the team started in the first place.</p>
+        <p>cbates@garfieldre2.net</p>
+        <p><a href="mailto:cbates@garfieldre2.net"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Tabitha Fish</h2>
+        <p class="title">Mentor</p>
+        <p>Ms. Fish, a math teacher, is one reason the team started in the first place.</p>
+        <p>tfish@garfieldre2.net</p>
+        <p><a href="mailto:tfish@garfieldre2.net"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2>Zachary '18</h2>
+        <p class="title">Alum | 13957</p>
+        <p>Zach was the original captain of our first FTC team in the 2016/17 school year. He then became captian of team 13957.</p>
+        <p><button class="button" id="null">.</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>Alexcia '18</h2>
+        <p class="title">Alum | 12035</p>
+        <p>Alexcia was, despite only being on the team for one year, a very valuable member. She was amazing at editing our notebook.</p>
+        <p><button class="button" id="null">.</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Jonathan '19</h2>
+        <p class="title">Programming | 13957</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2>Kyler '19</h2>
+        <p class="title">Design/Building | 13957</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="Camilla" style="width:100%">
+      <div class="container">
+        <h2>Isabelle '19</h2>
+        <p class="title">Design/Notebook | 12035</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><a href="mailto:example@example.com"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
 
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Erin '20</h2>
+        <p class="title">Building | 13957</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><a href="mailto:example@example.com"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2>Gage '20</h2>
+        <p class="title">Design/Building | 12035</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><a href="mailto:example@example.com"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>Anthony '20</h2>
+        <p class="title">Building | 13957</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
 
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Stephany '20</h2>
+        <p class="title">Building | 13957</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2>Serena '20</h2>
+        <p class="title">Art/Notebook | 13957</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="Camilla" style="width:100%">
+      <div class="container">
+        <h2>Dylan '21</h2>
+        <p class="title">Captain/Programming | 12035</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><a href="mailto:example@example.com"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Austin '21</h2>
+        <p class="title">Design/Building | 12035</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><a href="mailto:example@example.com"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2>Selvin '21</h2>
+        <p class="title">Design/Building | 12035</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><a href="mailto:example@example.com"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="assets/user2.jpg" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>Harrison '21</h2>
+        <p class="title">Design/Building | 12035</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
